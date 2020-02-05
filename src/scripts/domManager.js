@@ -70,6 +70,16 @@ const DOM = {
         const company = businesses.find(biz => biz.companyName.toLowerCase() === inp.toLowerCase())
 
         containerEl.innerHTML = HTML.createHTML(company);
+    },
+    renderOrderTot() {
+        const header = document.querySelector("h1");
+        header.innerHTML += "Active Customers";
+
+        businesses.forEach(biz => {
+            const sum = (biz.orders.reduce((acc, crv) => acc + crv)).toFixed(2);
+
+            containerEl.innerHTML += HTML.createNewHTML(biz, sum);
+        })
     }
 }
 
