@@ -80,6 +80,20 @@ const DOM = {
 
             containerEl.innerHTML += HTML.createNewHTML(biz, sum);
         })
+    },
+    renderBigSpender() {
+        const header = document.querySelector("h1");
+        header.innerHTML += "Big Spenders";
+
+        const bigSpenders = businesses.filter(biz => {
+            if (biz.orders.some(ord => ord > 9000)) {
+                return biz;
+            }
+        })
+
+        bigSpenders.forEach(biz => {
+            containerEl.innerHTML += HTML.createHTML(biz);
+        })
     }
 }
 

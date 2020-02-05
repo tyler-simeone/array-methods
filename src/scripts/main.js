@@ -4,7 +4,8 @@ import DOM from "./domManager.js"
 // DOM.renderPurchasingAgents();
 // DOM.renderNyToDom();
 // DOM.renderManufacturing();
-DOM.renderOrderTot();
+// DOM.renderOrderTot();
+DOM.renderBigSpender();
 
 // Finds and displays company that user searches for...
 const btn = document.querySelector("#searchBtn");
