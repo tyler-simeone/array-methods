@@ -36,17 +36,27 @@ const DOM = {
         const header = document.querySelector("h1");
         header.innerHTML = "Purchasing Agents";
 
+        // returns new array of objects with more specific properties (not saving new obj vals)...
+        // So I needed to remove backticks around the obj bc it was making the whole obj a string,
+        // which I had a feeling of, but when I did that the obj went dark text like it wasn't being
+        // read.. Kristen told me I needed to move the opening curly bracket for the obj up a line and
+        // next to the return statement, THEN the obj started getting seen. The rest of my code works!
         const agents = businesses.map(business => {
-            return 
-                {
-                    "fullName": "${business.purchasingAgent.nameFirst} ${business.purchasingAgent.nameLast}",
-                    "company": "${business.companyName}",
-                    "phoneNumber": "${business.phoneWork}"
+            return {
+                    "fullName": `${business.purchasingAgent.nameFirst} ${business.purchasingAgent.nameLast}`,
+                    "company": `${business.companyName}`,
+                    "phoneNumber": `${business.phoneWork}`
                 }
             
         });
+        
+        // Looping through new arr of objs and adding them to DOM in HTML format
         agents.forEach(agent => {
-            containerEl.innerHTML += agent;
+            containerEl.innerHTML += `
+                <h2>${agent.fullName}</h2>
+                <h3>${agent.company}</h3>
+                <h3>${agent.phoneNumber}</h3>
+            `;
             containerEl.innerHTML += `<hr/>`;
         });
     }
