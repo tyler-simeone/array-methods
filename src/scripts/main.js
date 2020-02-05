@@ -4,3 +4,7 @@ import DOM from "./domManager.js"
 // DOM.renderPurchasingAgents();
 // DOM.renderNyToDom();
 // DOM.renderManufacturing();
+// onClick();
+
+const btn = document.querySelector("#searchBtn");
+btn.addEventListener("click", () => DOM.renderCompany());
