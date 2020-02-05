@@ -63,6 +63,8 @@ const DOM = {
     renderCompany() {
         // event.preventDefault();
 
+        // Couldn't get this code to work and it was bc I was searching
+        // for elementById AND including the # ... 
         const inp = document.getElementById("companySearch").value;
         
         const company = businesses.find(biz => biz.companyName.toLowerCase() === inp.toLowerCase())
