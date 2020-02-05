@@ -59,6 +59,15 @@ const DOM = {
             `;
             containerEl.innerHTML += `<hr/>`;
         });
+    },
+    renderCompany() {
+        // event.preventDefault();
+
+        const inp = document.getElementById("companySearch").value;
+        
+        const company = businesses.find(biz => biz.companyName.toLowerCase() === inp.toLowerCase())
+
+        containerEl.innerHTML = HTML.createHTML(company);
     }
 }
 

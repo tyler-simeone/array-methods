@@ -1,7 +1,10 @@
 import DOM from "./domManager.js"
 
-// This code renders each obj in db arr to the DOM in DOM components
 // DOM.renderAllToDom();
-DOM.renderPurchasingAgents();
+// DOM.renderPurchasingAgents();
 // DOM.renderNyToDom();
 // DOM.renderManufacturing();
+// onClick();
+
+const btn = document.querySelector("#searchBtn");
+btn.addEventListener("click", () => DOM.renderCompany());
